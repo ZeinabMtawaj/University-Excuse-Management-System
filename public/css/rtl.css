@@ -1,0 +1,10 @@
+/* public/css/custom-rtl.css */
+.navbar-nav {
+    padding-right: 0; /* Adjust padding as needed for RTL */
+}
+
+.dropdown-menu {
+    text-align: right; /* Align text to the right for RTL */
+    right: 0; /* Position dropdown to the right */
+    left: auto; /* Remove the default left positioning */
+}

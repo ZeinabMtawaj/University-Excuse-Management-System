@@ -1,0 +1,282 @@
+  /* Custom styles */
+.navbar {
+    padding: 0.5rem 2rem;
+    background: linear-gradient(45deg,#186db6, #759ee4);
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure the navbar stays above other content */
+    transition: box-shadow 0.3s ease;
+}
+
+
+
+/* Shadow styling for scrolled state */
+.navbar.scrolled {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    height: 70px;
+    
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+.navbar-brand img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+.nav-link {
+    padding: 0.5rem 2rem;
+    transition: background 0.3s;
+}
+.nav-item:hover .nav-link {
+    background: rgba(255,255,255,0.1);
+}
+.dropdown-menu {
+    border: 1px solid;
+    background: linear-gradient(45deg, #f9fbfc, #edecf0);
+}
+
+.dropdown-item:hover {
+    background: rgb(255, 255, 255);
+    
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);  /* Adjusted this value */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    max-height: 80vh; /* Adjust based on your preference */
+    animation: moveUpDown 2s infinite; /* Apply the animation */
+    margin-top: 20px; /* Added margin to prevent touching the navbar */
+}
+
+.text-content {
+    font-size: 1.5rem;  /* Adjust font size based on your preference */
+}
+
+.text-content .bold-text {
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #023a6b; 
+}
+footer a:hover {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Take up the full viewport height */
+}
+
+main {
+        flex: 1; /* Allow the main content to grow and consume available space */
+}
+/* About Section Styles */
+
+/* About Section Styles */
+
+/* About Section Styles */
+
+.about-section {
+background-color: #f8f9fa; /* light background color */
+}
+
+/* About Title Styling with Lines */
+
+.about-title {
+position: relative;
+font-size: 2rem;
+z-index: 1;
+display: inline-block;
+padding: 0 40px; /* Increase padding to give more space for the lines */
+background-color: #f8f9fa; /* Ensures the title overlaps the lines */
+}
+
+.about-title::before,
+.about-title::after {
+content: '';
+position: absolute;
+top: 50%;
+height: 2px; /* Thickness of the line */
+width: 60px; /* Adjust for desired line width */
+background-color: #023a6b; /* Line color */
+transform: translateY(-50%); /* Vertically center */
+}
+
+.about-title::before {
+left: 0;
+margin-left: -30px; /* Adjust based on line width + some spacing */
+}
+
+.about-title::after {
+right: 0;
+margin-right: -30px; /* Adjust based on line width + some spacing */
+}
+
+.about-box {
+position: relative;
+height: 250px; /* Adjust based on your content */
+border: 1px solid #ccc;
+border-radius: 20px; /* Rounded corners */
+overflow: hidden; /* Ensures the spreading color animation stays within the box */
+transition: background-color 0.5s ease, box-shadow 0.3s ease; /* Added transition for box-shadow */
+background: #FFFFFF;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Initial shadow */
+}
+
+.color-corner {
+position: absolute;
+top: 0;
+right: 0;
+width: 40px; /* Size of the colored corner */
+height: 40px;
+border-top-right-radius: 20px; /* Rounded corner */
+border-bottom-left-radius: 70% 140px; /* Rounded corner */
+background-color: #759ee4; /* Color for the corner */
+transform: scale(1); /* Initial scale */
+transition: transform 0.5s ease; /* Animation */
+}
+
+.about-box:hover {
+background-color: #186db6; /* Fill color on hover */
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+
+}
+
+.about-box:hover .color-corner {
+transform: scale(25); /* Scale up to fill the box on hover */
+}
+
+/* Style for the text inside the boxes */
+
+.box-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centering technique */
+    width: 80%; /* Adjust to leave some padding around the text */
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.4; /* Gives some spacing between lines if the text wraps */
+    z-index: 2; /* Ensures the text is above the color spread */
+}
+
+.color-corner {
+    z-index: 1; /* Keeps the color spread below the text */
+}
+
+.about-box:hover .box-content {
+    color: #FFFFFF; /* White text color on hover for better contrast with the background */
+}
+
+
+
+
+
+
+
+
+
+/* dashboard */
+
+
+
+
+
+
+/* CSS for Dashboard Wrapper */
+
+#dashboard-wrapper {
+    min-height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping of sidebar/content */
+  }
+  
+  #sidebar-wrapper {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    margin-left: -250px; /* Hide sidebar initially */
+    flex: 0 0 250px; /* Sidebar width */
+    background-color: #92bff1;
+  }
+  
+  #page-content-wrapper {
+    flex: 1;
+    padding-top: 56px; /* Height of the navbar */
+  }
+  
+  /* Always keep the sidebar on the screen */
+  @media (min-width: 768px) {
+    #sidebar-wrapper {
+      margin-left: 0;
+    }
+  }
+  
+  /* Styling for list items */
+  .list-group-item-action {
+    width: 100%;
+    color: #333333;
+    transition: all 0.3s;
+  }
+  
+  /* Highlight active menu item */
+  .list-group-item-action.active, .list-group-item-action:hover {
+    background-color: #186db6;
+    color: rgb(255, 255, 255);
+  }
+  
+  /* Sidebar heading */
+  .sidebar-heading {
+    padding: 0.875rem 1.25rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+
+
+
+
+
+  .table td, .table th {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+
+
+
+
+
+  /* public/css/custom-rtl.css */
+.navbar-nav {
+    padding-right: 0; /* Adjust padding as needed for RTL */
+}
+
+.dropdown-menu {
+    text-align: right; /* Align text to the right for RTL */
+    right: 0; /* Position dropdown to the right */
+    left: auto; /* Remove the default left positioning */
+}
